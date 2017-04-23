@@ -1,0 +1,14 @@
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\PointAndClick_v1.0.exe.config
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\PointAndClick_v1.0.exe
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\PointAndClick_v1.0.pdb
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.csprojResolveAssemblyReference.cache
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\MainWindow.g.cs
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\App.g.cs
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0_MarkupCompile.cache
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0_MarkupCompile.lref
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\MainWindow.baml
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.g.resources
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1._0.Properties.Resources.resources
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.csproj.GenerateResource.Cache
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.exe
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.pdb
