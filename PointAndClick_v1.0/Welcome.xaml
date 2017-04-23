@@ -1,0 +1,32 @@
+﻿<Page x:Class="PointAndClick_v1._0.Welcome"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointAndClick_v1._0"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="500"
+      Title="Welcome">
+
+        <Grid Background="#FFF0F0F0" Margin="0">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0,1,0,0" />
+
+
+        <TextBlock x:Name="welcomeField" Grid.Column="0" Grid.Row="0" Text="
+This can be the welcome page.&#x0a;&#x0a;
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat mauris a libero molestie molestie ac ut tellus. Donec id nibh ut ligula pulvinar aliquam quis vel arcu. Suspendisse sit amet libero consequat, tempus libero non, tincidunt turpis. Duis eu elementum felis. Duis semper diam lectus, in tempor enim fringilla a. Sed accumsan iaculis dictum. In facilisis varius odio vitae dictum. Donec a lorem vitae nisl suscipit aliquet in quis mi. Fusce interdum mattis erat, ut vulputate nunc commodo eu. Aenean mauris turpis, feugiat at ipsum ut, mattis finibus lacus. Ut vehicula, quam non convallis mattis, metus elit porta ipsum, quis vehicula nibh dui et mauris. Nunc sem sem, sagittis vitae ultrices facilisis, suscipit nec mauris. Cras et arcu lorem. Quisque placerat elementum velit, blandit elementum nisl faucibus eu.
+
+Vivamus malesuada ligula sed ex rutrum, vel luctus sapien varius. Suspendisse in sapien sed sapien bibendum feugiat quis at tortor. Praesent porttitor nisi molestie mi consectetur fermentum. Donec ac sodales nulla. Nullam nec metus non tortor accumsan varius. Praesent dapibus velit eu felis tincidunt scelerisque. Nulla molestie purus dui. Phasellus at fringilla tellus. Mauris lectus nisi, blandit vitae convallis eget, elementum et est.
+
+Sed condimentum id ipsum ut suscipit. Proin vel nisl non orci vehicula aliquam commodo id arcu. Vestibulum sit amet venenatis dui, bibendum malesuada neque. Etiam sit amet dui et risus posuere ultrices. Donec sed lobortis purus. Sed libero eros, tincidunt et maximus ut, facilisis at elit. Etiam feugiat pharetra dolor, vel pretium magna ullamcorper sit amet. Vestibulum vel turpis nisi.
+&#x0a;&#x0a;"
+                   TextWrapping="Wrap" Background="White" />
+    </Grid>
+</Page>

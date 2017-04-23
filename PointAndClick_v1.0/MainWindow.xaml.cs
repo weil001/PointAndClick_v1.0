@@ -23,16 +23,7 @@ namespace PointAndClick_v1._0
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void next_Click(object sender, RoutedEventArgs e)
-        {
-
+            Main.Content = new Welcome();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -40,6 +31,16 @@ namespace PointAndClick_v1._0
             if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Question)
                 == MessageBoxResult.Yes)
             this.Close();
+        }
+
+        private void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ImportData();
+        }
+
+        private void importCSVButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ImportCSV();
         }
     }
 }
