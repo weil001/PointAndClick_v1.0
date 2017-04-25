@@ -5,16 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointAndClick_v1._0"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="600"
-      Title="ImportData">
+      d:DesignHeight="600"
+      Title="ImportData" Width="787">
+
     <Page.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="0"/>
-            <GradientStop Color="#FFFF8B00" Offset="1"/>
+            <GradientStop Color="White" Offset="0"/>
+            <GradientStop Color="#6d99e0" Offset="1"/>
         </LinearGradientBrush>
     </Page.Background>
 
-    <Grid Width="100" Height="100" Opacity="100">
-<TextBox Text="IMPORT DATA" />
+    <Grid>
+
+        <!-- Datagrid that users .CSV is displayed-->
+        <DataGrid Name="dataGrid2" HorizontalAlignment="Left" Height="376" VerticalAlignment="Top" Width="264" Margin="182,10,0,0" 
+                  AutoGenerateColumns="True" 
+                  CanUserSortColumns="False"
+                  IsSynchronizedWithCurrentItem="True"
+                  IsReadOnly="True"
+                  SelectionUnit="Cell"
+                  CanUserResizeColumns="False" 
+                  CanUserResizeRows="False">
+            <DataGrid.Resources>
+
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Datagrid that PostalMate's database is displayed-->
+        <DataGrid Name="dataGrid1" HorizontalAlignment="Left" Height="376" VerticalAlignment="Top" Width="264" Margin="501,10,0,0"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="True"
+                  CanUserSortColumns="False"
+                  CanUserResizeColumns="False" 
+                  CanUserResizeRows="False">
+            <DataGrid.Resources>
+
+            </DataGrid.Resources>
+        </DataGrid>
+        <Button x:Name="button1" Content="Browse" Click="CSV_Click" HorizontalAlignment="Left" Margin="54,197,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
+
 </Page>
