@@ -61,7 +61,18 @@ namespace PointAndClick_v1._0
                     }
                 }
             }
-            return dt;
+
+            // Creates and displays a new data table with only the CSV headers
+            DataTable dt2 = new DataTable("CSV Headers");
+            dt2.Columns.Add("CSV Headers", typeof(string));
+
+            foreach (DataColumn column in dt.Columns)
+            {
+                dt2.Rows.Add(column.ColumnName);
+            }
+
+
+            return dt2;
         }
 
         //Browse button opens a file explorer and allows user to select a .csv file
