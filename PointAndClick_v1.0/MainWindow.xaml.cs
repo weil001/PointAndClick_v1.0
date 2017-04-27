@@ -23,7 +23,6 @@ namespace PointAndClick_v1._0
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new Welcome();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -35,12 +34,13 @@ namespace PointAndClick_v1._0
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new ImportData();
+
         }
 
         private void importCSVButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new ImportCSV();
+
         }
+
     }
 }

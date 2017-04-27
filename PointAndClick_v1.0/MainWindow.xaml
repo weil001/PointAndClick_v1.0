@@ -8,53 +8,10 @@
         Title="Postalmate Import"
         Icon="favicon.ico"
         Width="800" Height="600">
-    <!-- Grid Layout
-             Col 0       Col 1
-    Row 0
-    Row 1
-    Row 2
-    -->
+
+    <!-- Loads Welcome Page into Main Frame -->
     <Grid Background="#FFF0F0F0" Margin="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="100" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Border Grid.ColumnSpan="2" Grid.Row="0" BorderBrush="Black" BorderThickness="0,1,0,0" />
-        <Border Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="#a0a0a0" BorderThickness="0,1,0,0" />
-
-        <!-- UI Elements
-                Margin/Padding assignments;     1, 2, 3, 4 {Left, Top, Right, Bottom}
-        -->
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Import Products Data" VerticalAlignment="Top"
-                   Foreground="#FF0080C0" FontSize="18" FontWeight="Bold" Grid.Column="0" Grid.Row="0" />
-
-        <Frame x:Name="Main" Grid.ColumnSpan="2" Grid.Row="1"></Frame>
-
-        <Button x:Name="cancelButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" Margin="10,10,0,0" Grid.Column="0" Grid.Row ="2" Click="cancelButton_Click" >
-            <StackPanel Orientation="Horizontal">
-                <Image x:Name="Cancel" Source="cancel.png" Width="24" Height="24" />
-                <TextBlock Text="Cancel" Padding="2,2,0,0"/>
-            </StackPanel>
-        </Button>
-
-        <Button x:Name="importCSVButton" HorizontalAlignment="Center" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" Margin="10,10,0,0" Grid.ColumnSpan="2" Grid.Row ="2" Click="importCSVButton_Click" >
-            <StackPanel Orientation="Horizontal">
-                <Image x:Name="importCSV" Source="cancel.png" Width="24" Height="24" />
-                <TextBlock Text="Import CSV" Padding="2,2,0,0"/>
-            </StackPanel>
-        </Button>
-
-        <Button x:Name="nextButton" HorizontalAlignment="Right" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" FontWeight="Bold" Margin="0,10,10,0" Grid.Column="1" Grid.Row ="2" Click="nextButton_Click" >
-            <StackPanel Orientation="Horizontal">
-                <Image x:Name="Next" Source="next.png" Width="24" Height="24" />
-                <TextBlock Text="Next" Padding="2,2,0,0"/>
-            </StackPanel>
-        </Button>
-        
+        <Frame x:Name="Main" Source="Welcome.xaml" />
     </Grid>
+    
 </Window>

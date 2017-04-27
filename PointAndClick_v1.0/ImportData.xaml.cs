@@ -87,8 +87,24 @@ namespace PointAndClick_v1._0
             }
         }
 
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (System.Windows.MessageBox.Show("Are you sure you want to cancel this operation?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                App.Current.Shutdown();
+        }
+
+        private void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
         //Browse button opens a file explorer and allows user to select a .csv file
-        private void CSV_Click(object sender, System.EventArgs e)
+        private void browseCSV_Click(object sender, RoutedEventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV|*.csv", ValidateNames = true, Multiselect = false })
             {
@@ -99,5 +115,10 @@ namespace PointAndClick_v1._0
             }
         }
 
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Welcome.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }

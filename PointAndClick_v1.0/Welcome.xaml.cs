@@ -25,5 +25,16 @@ namespace PointAndClick_v1._0
             InitializeComponent();
         }
 
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (System.Windows.MessageBox.Show("Are you sure you want to cancel this operation?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                App.Current.Shutdown();
+        }
+
+        private void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("ImportData.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }
