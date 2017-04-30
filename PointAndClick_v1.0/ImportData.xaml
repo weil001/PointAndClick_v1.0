@@ -47,7 +47,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" TextChanged="textBox_TextChanged" Grid.Column="0" Grid.Row="0" />
@@ -81,7 +81,7 @@
                   AutoGenerateColumns="True"
                   CanUserSortColumns="False"
                   CanUserResizeColumns="False" 
-                  CanUserResizeRows="False">
+                  CanUserResizeRows="False" SelectionChanged="dataGrid1_SelectionChanged">
             <DataGrid.Resources>
 
             </DataGrid.Resources>
@@ -92,6 +92,14 @@
             <StackPanel Orientation="Horizontal">
                 <Image x:Name="Cancel" Source="cancel.png" Width="24" Height="24" />
                 <TextBlock Text="Cancel" Padding="2,2,0,0"/>
+            </StackPanel>
+        </Button>
+
+        <!--REFRESH BUTTON -->
+        <Button x:Name="refreshButton" HorizontalAlignment="Center" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" FontWeight="Bold" Margin="0,10,70,0" Grid.ColumnSpan="2" Grid.Row ="3" Click="refreshButton_Click" >
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="Refresh" Source="refresh.png" Width="24" Height="24" />
+                <TextBlock Text="Refresh" Padding="2,2,0,0"/>
             </StackPanel>
         </Button>
 
@@ -106,8 +114,8 @@
         <!--NEXT BUTTON -->
         <Button x:Name="nextButton" HorizontalAlignment="Right" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" FontWeight="Bold" Margin="0,10,10,0" Grid.Column="1" Grid.Row ="3" Click="nextButton_Click" >
             <StackPanel Orientation="Horizontal">
-                <Image x:Name="Next" Source="next.png" Width="24" Height="24" />
-                <TextBlock Text="Next" Padding="2,2,0,0"/>
+                <Image x:Name="Next" Source="import.png" Width="24" Height="24" />
+                <TextBlock Text="Import Data" Padding="2,2,0,0"/>
             </StackPanel>
         </Button>
 

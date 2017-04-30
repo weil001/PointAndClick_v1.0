@@ -69,22 +69,9 @@ namespace PointAndClick_v1._0
             foreach (DataColumn column in dt.Columns)
             {
                 dt2.Rows.Add(column.ColumnName);
-            }
-
+            }      
 
             return dt2;
-        }
-
-        //Browse button opens a file explorer and allows user to select a .csv file
-        private void loadCSV_Click(object sender, System.EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV|*.csv", ValidateNames = true, Multiselect = false })
-            {
-                if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    dataGrid2.ItemsSource = ReadCSV(ofd.FileName).DefaultView;
-                }
-            }
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -111,6 +98,8 @@ namespace PointAndClick_v1._0
                 if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     dataGrid2.ItemsSource = ReadCSV(ofd.FileName).DefaultView;
+
+                    System.Windows.MessageBox.Show("Change CSV Dialogue Prompt", "Confirm", MessageBoxButton.OK, MessageBoxImage.Question);
                 }
             }
         }
@@ -119,6 +108,16 @@ namespace PointAndClick_v1._0
         {
             Uri uri = new Uri("Welcome.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
+        }
+
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

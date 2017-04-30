@@ -36,5 +36,29 @@ namespace PointAndClick_v1._0
             Uri uri = new Uri("ImportData.xaml", UriKind.Relative);
             this.NavigationService.Navigate(uri);
         }
+
+        private void checkBox1_Checked(object sender, RoutedEventArgs e)
+        {
+            if (checkBox1.IsChecked == true && checkBox2.IsChecked == true && checkBox3.IsChecked == true)
+            {
+                nextButton.IsEnabled = true;
+            }
+        }
+
+        private void checkBox2_Checked(object sender, RoutedEventArgs e)
+        {
+            if (checkBox1.IsChecked == true && checkBox2.IsChecked == true && checkBox3.IsChecked == true)
+            {
+                nextButton.IsEnabled = true;
+            }
+        }
+
+        private void checkBox3_Checked(object sender, RoutedEventArgs e)
+        {
+            if (checkBox1.IsChecked == true && checkBox2.IsChecked == true && checkBox3.IsChecked == true)
+            {
+                nextButton.IsEnabled = true;
+            }
+        }
     }
 }
