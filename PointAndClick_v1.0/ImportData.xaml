@@ -50,7 +50,8 @@
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" TextChanged="textBox_TextChanged" Grid.Column="0" Grid.Row="0" />
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" TextChanged="textBox_TextChanged" Grid.Column="0" Grid.Row="0"
+                         IsReadOnly="True"/>
 
                 <Button x:Name="browseCSV" Content="Browse..." HorizontalAlignment="Left" Margin="10,0,0,0" Width="75" Height="21" Click="browseCSV_Click" Cursor="Hand" Grid.Column="1" Grid.Row="0" />
             </Grid>
@@ -111,8 +112,8 @@
             </StackPanel>
         </Button>
         
-        <!--NEXT BUTTON -->
-        <Button x:Name="nextButton" HorizontalAlignment="Right" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" FontWeight="Bold" Margin="0,10,10,0" Grid.Column="1" Grid.Row ="3" Click="nextButton_Click" >
+        <!--ImportData BUTTON -->
+        <Button x:Name="ImportButton" HorizontalAlignment="Right" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" FontWeight="Bold" Margin="0,10,10,0" Grid.Column="1" Grid.Row ="3" Click="ImportButton_Click" >
             <StackPanel Orientation="Horizontal">
                 <Image x:Name="Next" Source="import.png" Width="24" Height="24" />
                 <TextBlock Text="Import Data" Padding="2,2,0,0"/>
