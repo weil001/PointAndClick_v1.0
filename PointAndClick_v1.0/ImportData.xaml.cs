@@ -73,7 +73,7 @@ namespace PointAndClick_v1._0
                 dt2.Rows.Add(column.ColumnName);
             }
 
-            return dt2;
+            return dt;
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -119,88 +119,37 @@ namespace PointAndClick_v1._0
         
         private void ImportButton_Click(object sender, RoutedEventArgs e)
         {
-            SaveImportDataToDatabase();
+            string Query, Data;
+            string connectionString = "User=SYSDBA; Password=3k7rur9e; Database=PCS; DataSource=localhost; Port=3050;";
+
+            try
+            {
+                using (FbConnection conn = new FbConnection(connectionString))
+                {
+                    conn.Open();
+                    
+                    foreach (System.Data.DataRowView dr in dataGrid2.ItemsSource)
+                    {
+                        Data = dr[0].ToString();
+                        FbCommand cmd = new FbCommand("INSERT INTO PRODUCT VALUES", conn);
+                        cmd.Parameters.AddWithValue("id", Data);
+                        cmd.Parameters.AddWithValue("description", Data);
+                        cmd.ExecuteNonQuery();
+                    }
+                    
+                }
+            }
+            catch
+            {
+
+            }
+
+
+
             System.Windows.MessageBox.Show("Import Complete");
         }
         
-        private DataTable getDataFromFile()
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-
-            DataTable importedData = new DataTable();
-            try
-            {
-                if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    using (StreamReader sr = new StreamReader(myFile))
-                    {
-                        string header = sr.ReadLine();
-
-                        if (string.IsNullOrEmpty(header))
-                        {
-                            System.Windows.MessageBox.Show("No File data");
-                            return null;
-                        }
-
-                        string[] headerColumns = header.Split(',');
-
-                        foreach (string headerColumn in headerColumns)
-                        {
-                            importedData.Columns.Add(headerColumn);
-                        }
-
-                        while (!sr.EndOfStream)
-                        {
-                            string line = sr.ReadLine();
-
-                            if (string.IsNullOrEmpty(line)) continue;
-
-                            string[] fields = line.Split(',');
-                            DataRow importedRow = importedData.NewRow();
-
-                            for (int i = 0; i < fields.Count(); i++)
-                            {
-                                importedRow[i] = fields[i];
-                            }
-
-                            importedData.Rows.Add(importedRow);
-
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
-            }
-
-            return importedData;
-        }
-
-        private void SaveImportDataToDatabase()
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            DataTable importedData = getDataFromFile();
-
-            string connectionString = "User=SYSDBA; Password=3k7rur9e; Database=PCS; DataSource=localhost; Port=3050;";
-            using (FbConnection con = new FbConnection(connectionString))
-            {
-                con.Open();
-                
-                foreach (DataRow importRow in importedData.Rows)
-                  {
-                    dataGrid2.ItemsSource = ReadCSV(ofd.FileName).DefaultView;
-                    FbCommand cmd = new FbCommand("INSERT INTO PRODUCT(ProductID, SKU, Description) VALUES(@productId, @sku, @description)", con);
-                    cmd.Parameters.AddWithValue("productId", importRow["ProductID"]);
-                    cmd.Parameters.AddWithValue("sku", importRow["SKU"]);
-                    cmd.Parameters.AddWithValue("description", importRow["Description"]);
-
-                    cmd.ExecuteNonQuery();
-                  }
-            }
-
-        }
+        
         
     }
 }
