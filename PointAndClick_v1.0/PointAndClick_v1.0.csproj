@@ -78,12 +78,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EditCSV.xaml.cs">
+      <DependentUpon>EditCSV.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImportData.xaml.cs">
       <DependentUpon>ImportData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
+    <Page Include="EditCSV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ImportData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="export.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

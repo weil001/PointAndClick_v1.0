@@ -23,7 +23,8 @@ namespace PointAndClick_v1._0
     /// </summary>
     public partial class ImportData : Page
     {
-        string myFile;
+        public static DataTable dt = new DataTable("Data");
+        public static DataTable dt2 = new DataTable("CSV Headers");
 
         public ImportData()
         {
@@ -41,7 +42,6 @@ namespace PointAndClick_v1._0
                 var Query = "SELECT rdb$field_name AS PRODUCT FROM rdb$relation_fields WHERE rdb$relation_name = 'PRODUCT'";
                 var dataAdapter = new FbDataAdapter(Query, con);
                 var commandBuilder = new FbCommandBuilder(dataAdapter);
-                DataTable dt = new DataTable();
                 dataAdapter.Fill(dt);
                 dataGrid1.ItemsSource = dt.DefaultView;
             }
@@ -51,7 +51,6 @@ namespace PointAndClick_v1._0
         // Reads in a .csv file and stores contents in a datatable
         private DataTable ReadCSV(string fileName)
         {
-            DataTable dt = new DataTable("Data");
             using (OleDbConnection cn = new System.Data.OleDb.OleDbConnection("Provider=MIcrosoft.Jet.OLEDB.4.0;Data Source=\"" + Path.GetDirectoryName(fileName) + "\"; Extended Properties='text;HDR=yes;FMT=Delimeted(,)';"))
             {
                 using (OleDbCommand cmd = new OleDbCommand(string.Format("SELECT * FROM [{0}]", new FileInfo(fileName).Name), cn))
@@ -61,11 +60,15 @@ namespace PointAndClick_v1._0
                     {
                         adapter.Fill(dt);
                     }
+                    dt.Columns.Add(new DataColumn("ProductID", typeof(string)));
+                    dt.Columns.Add(new DataColumn("DepartmentID", typeof(string)));
+                    dt.Columns.Add(new DataColumn("GlyphID", typeof(string)));
+                    dt.Columns.Add(new DataColumn("TaxCategoryID", typeof(string)));
+                    dt.Columns.Add(new DataColumn("VendorID", typeof(string)));
                 }
             }
 
             // Creates and displays a new data table with only the CSV headers
-            DataTable dt2 = new DataTable("CSV Headers");
             dt2.Columns.Add("CSV Headers", typeof(string));
 
             foreach (DataColumn column in dt.Columns)
@@ -111,11 +114,6 @@ namespace PointAndClick_v1._0
         {
 
         }
-
-        private void refreshButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         
         private void ImportButton_Click(object sender, RoutedEventArgs e)
         {
@@ -148,8 +146,11 @@ namespace PointAndClick_v1._0
 
             System.Windows.MessageBox.Show("Import Complete");
         }
-        
-        
-        
+
+        private void editbutton_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("EditCSV.xaml", UriKind.Relative);
+            this.NavigationService.Navigate(uri);
+        }
     }
 }
