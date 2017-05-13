@@ -11,7 +11,7 @@
 
     <!-- Loads Welcome Page into Main Frame -->
     <Grid Background="#FFF0F0F0" Margin="0">
-        <Frame x:Name="Main" Source="Welcome.xaml" />
+        <Frame x:Name="Main" Source="Welcome.xaml" NavigationUIVisibility="Hidden" />
     </Grid>
     
 </Window>
