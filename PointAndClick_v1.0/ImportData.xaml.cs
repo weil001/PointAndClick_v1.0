@@ -186,6 +186,24 @@ namespace PointAndClick_v1._0
             return dtMapped;
         }
 
+        string createfbCommand(DataTable dtMapped)
+        {
+            string fbCommand = "INSERT INTO PRODUCT(";
+            foreach (DataColumn column in dtMapped.Columns)
+            {
+                fbCommand = fbCommand + column.ColumnName.ToString() + ",";
+            }
+            fbCommand = fbCommand + ") VALUES (";
+            foreach (DataColumn column in dtMapped.Columns)
+            {
+                fbCommand = fbCommand + "@"+ column.ColumnName.ToString() + ",";
+            }
+
+            fbCommand = fbCommand + ")";
+
+            return fbCommand;
+        }
+
         private void fillPostalMate()
         {
             DataTable dt = new DataTable("Data");
@@ -236,6 +254,9 @@ namespace PointAndClick_v1._0
             dt2.Rows.Add("DIM");
             dt2 = mapping(dt2, dt3);
             dtMapped = dtToInsert(dt, dt2);
+
+            System.Windows.MessageBox.Show(createfbCommand(dtMapped));
+
             return dt2;
         }
 
@@ -285,15 +306,22 @@ namespace PointAndClick_v1._0
                 using (FbConnection conn = new FbConnection(connectionString))
                 {
                     conn.Open();
-                    
-                    foreach (System.Data.DataRowView dr in dataGrid2.ItemsSource)
-                    {
-                        Data = dr[0].ToString();
-                        FbCommand cmd = new FbCommand("INSERT INTO PRODUCT VALUES", conn);
-                        cmd.Parameters.AddWithValue("id", Data);
-                        cmd.Parameters.AddWithValue("description", Data);
+
+                        string insertFbCommand = createfbCommand(dtMapped);
+                        string columnName;
+                        FbCommand cmd = new FbCommand(insertFbCommand, conn);
+
+                        foreach(DataRow row in dtMapped.Rows)
+                        {
+                            
+                            foreach(DataColumn column in dtMapped.Columns)
+                            {
+                                columnName = column.ColumnName.ToString();
+                                cmd.Parameters.AddWithValue(columnName, row[columnName]);
+                            }
+                        }
+
                         cmd.ExecuteNonQuery();
-                    }
                     
                 }
             }
