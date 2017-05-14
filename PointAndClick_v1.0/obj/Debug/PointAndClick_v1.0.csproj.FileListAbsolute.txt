@@ -62,3 +62,5 @@ C:\Users\JR\Desktop\CIS 490\PointAndClick 5.13.17\PointAndClick_v1.0\PointAndCli
 C:\Users\JR\Desktop\CIS 490\PointAndClick 5.13.17\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.g.resources
 C:\Users\JR\Desktop\CIS 490\PointAndClick 5.13.17\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1._0.Properties.Resources.resources
 C:\Users\JR\Desktop\CIS 490\PointAndClick 5.13.17\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.csproj.GenerateResource.Cache
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\ResourceDictionary.baml
+D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\App.baml

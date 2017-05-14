@@ -23,17 +23,20 @@ namespace PointAndClick_v1._0
     /// </summary>
     public partial class ImportData : Page
     {
-        //public static DataTable dt = new DataTable("Data");
-        //public static DataTable dt2 = new DataTable("CSV Headers");
-
+        public static DataTable dt = new DataTable("dtTable");
+        public static DataTable dt1 = new DataTable("dt1Table");
+        public static DataTable dt3 = new DataTable("dt3Table");
+        public static DataTable dtMapped = new DataTable("dtMappedTable");
+        public static string csvFilepath = string.Empty;
+        
         public ImportData()
         {
             InitializeComponent();
             fillPostalMate();
         }
 
-        DataTable dt3;
-        DataTable dtMapped = new DataTable();
+        //DataTable dt3;
+        //DataTable dtMapped = new DataTable();
 
         //Checks if PRODUCTID, DEPARTMENTREF, TAXCATEGORYREF, VENDORREF, GLYPHREF is in CSV datatable
         //If not adds them to datatable
@@ -206,7 +209,7 @@ namespace PointAndClick_v1._0
 
         private void fillPostalMate()
         {
-            DataTable dt = new DataTable("Data");
+            DataTable dt5 = new DataTable("SQL");
             string connectionString = "User=SYSDBA; Password=3k7rur9e; Database=PCS; DataSource=localhost; Port=3050;";
 
             using (FbConnection con = new FbConnection(connectionString))
@@ -214,9 +217,9 @@ namespace PointAndClick_v1._0
                 var Query = "SELECT rdb$field_name AS PRODUCT FROM rdb$relation_fields WHERE rdb$relation_name = 'PRODUCT'";
                 var dataAdapter = new FbDataAdapter(Query, con);
                 var commandBuilder = new FbCommandBuilder(dataAdapter);
-                dataAdapter.Fill(dt);
-                dataGrid1.ItemsSource = dt.DefaultView;
-                dt3 = dt;
+                dataAdapter.Fill(dt5);
+                dataGrid1.ItemsSource = dt5.DefaultView;
+                dt3 = dt5;
             }
 
         }
@@ -224,7 +227,7 @@ namespace PointAndClick_v1._0
         // Reads in a .csv file and stores contents in a datatable
         private DataTable ReadCSV(string fileName)
         {
-            DataTable dt = new DataTable("Data");
+            //dt = new DataTable("Data");
             using (OleDbConnection cn = new System.Data.OleDb.OleDbConnection("Provider=MIcrosoft.Jet.OLEDB.4.0;Data Source=\"" + Path.GetDirectoryName(fileName) + "\"; Extended Properties='text;HDR=yes;FMT=Delimeted(,)';"))
             {
                 using (OleDbCommand cmd = new OleDbCommand(string.Format("SELECT * FROM [{0}]", new FileInfo(fileName).Name), cn))
@@ -237,7 +240,7 @@ namespace PointAndClick_v1._0
 
                 }
             }
-
+            csvFilepath = fileName;
             dt = checkInitialColumns(dt);
 
 
@@ -280,7 +283,7 @@ namespace PointAndClick_v1._0
                 {
                     dataGrid2.ItemsSource = ReadCSV(ofd.FileName).DefaultView;
 
-                    System.Windows.MessageBox.Show("Change CSV Dialogue Prompt", "Confirm", MessageBoxButton.OK, MessageBoxImage.Question);
+                    System.Windows.MessageBox.Show(csvFilepath, "Confirm", MessageBoxButton.OK, MessageBoxImage.Question);
                 }
             }
         }
