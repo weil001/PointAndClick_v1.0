@@ -131,9 +131,11 @@ namespace PointAndClick_v1._0
             string mapped;
             foreach (DataRow row in dt1.Rows)
             {
+                //Gets Column name from dt1
                 dt1Row = row["CSV Headers"].ToString();
                 foreach (DataRow row2 in dt2.Rows)
                 {
+                    //Gets Column name from dt2 and makes it lower case and without spaces
                     dt2Row = row2["PRODUCT"].ToString();
                     while (dt2Row.IndexOf("  ") >= 0)
                         dt2Row = dt2Row.Replace(" ", "");
@@ -189,6 +191,7 @@ namespace PointAndClick_v1._0
             return dtMapped;
         }
 
+        //Creates SQL command from Mapped Data Table
         string createfbCommand(DataTable dtMapped)
         {
             string fbCommand = "INSERT INTO PRODUCT(";
@@ -314,22 +317,23 @@ namespace PointAndClick_v1._0
                     string atColumnName;
                     int productID;
 
+                    //Go through each row of Mapped Datatable
                     for (int i = 0; i < rowCount; i++)
                     {
                         FbCommand cmd = new FbCommand(insertFbCommand, conn);
-                        System.Windows.MessageBox.Show("Searching Row");
-
 
                         foreach (DataColumn column in dtMapped.Columns)
                         {
+                            //Gets Name of each column of row
                             columnName = column.ColumnName.ToString();
                             atColumnName = "@" + columnName;
-
+                            //If  productID turns object into Int and adds value to sql command
                             if (columnName == "PRODUCTID")
                             {
                                 productID = Convert.ToInt32(dtMapped.Rows[i][columnName]);
                                 cmd.Parameters.AddWithValue(atColumnName, productID);
                             }
+                            //If one of main header columns and empty,  adds 0 as value to sql command
                             else if (dtMapped.Rows[i][columnName].ToString() == "")
                             {
                                 if (columnName == "DEPARTMENTREF" || columnName == "TAXCATEGORYREF" || columnName == "VENDORREF" || columnName == "GLYPHREF")
@@ -337,6 +341,7 @@ namespace PointAndClick_v1._0
                                     cmd.Parameters.AddWithValue(atColumnName, 0);
                                 }
                             }
+                            //If NULL value, returns value as null at that column
                             else if (dtMapped.Rows[i][columnName].ToString() == "NULL" || dtMapped.Rows[i][columnName].ToString() == "null" || dtMapped.Rows[i][columnName].ToString() == "Null")
                             {
                                 cmd.Parameters.AddWithValue(atColumnName, DBNull.Value);
