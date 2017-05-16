@@ -196,14 +196,15 @@ namespace PointAndClick_v1._0
             {
                 fbCommand = fbCommand + column.ColumnName.ToString() + ",";
             }
+            fbCommand = fbCommand.Substring(0, fbCommand.LastIndexOf(","));
             fbCommand = fbCommand + ") VALUES (";
             foreach (DataColumn column in dtMapped.Columns)
             {
-                fbCommand = fbCommand + "@"+ column.ColumnName.ToString() + ",";
+                fbCommand = fbCommand + "@" + column.ColumnName.ToString() + ",";
             }
 
-            fbCommand = fbCommand + ")";
-
+            fbCommand = fbCommand.Substring(0, fbCommand.LastIndexOf(","));
+            fbCommand = fbCommand + ");";
             return fbCommand;
         }
 
@@ -257,9 +258,6 @@ namespace PointAndClick_v1._0
             dt2.Rows.Add("DIM");
             dt2 = mapping(dt2, dt3);
             dtMapped = dtToInsert(dt, dt2);
-
-            System.Windows.MessageBox.Show(createfbCommand(dtMapped));
-
             return dt2;
         }
 
@@ -301,7 +299,7 @@ namespace PointAndClick_v1._0
         
         private void ImportButton_Click(object sender, RoutedEventArgs e)
         {
-            string Query, Data;
+            int rowCount = dtMapped.Rows.Count;
             string connectionString = "User=SYSDBA; Password=3k7rur9e; Database=PCS; DataSource=localhost; Port=3050;";
 
             try
@@ -310,22 +308,48 @@ namespace PointAndClick_v1._0
                 {
                     conn.Open();
 
-                        string insertFbCommand = createfbCommand(dtMapped);
-                        string columnName;
-                        FbCommand cmd = new FbCommand(insertFbCommand, conn);
 
-                        foreach(DataRow row in dtMapped.Rows)
+                    string insertFbCommand = createfbCommand(dtMapped);
+                    string columnName;
+                    string atColumnName;
+                    int productID;
+
+                    for (int i = 0; i < rowCount; i++)
+                    {
+                        FbCommand cmd = new FbCommand(insertFbCommand, conn);
+                        System.Windows.MessageBox.Show("Searching Row");
+
+
+                        foreach (DataColumn column in dtMapped.Columns)
                         {
-                            
-                            foreach(DataColumn column in dtMapped.Columns)
+                            columnName = column.ColumnName.ToString();
+                            atColumnName = "@" + columnName;
+
+                            if (columnName == "PRODUCTID")
                             {
-                                columnName = column.ColumnName.ToString();
-                                cmd.Parameters.AddWithValue(columnName, row[columnName]);
+                                productID = Convert.ToInt32(dtMapped.Rows[i][columnName]);
+                                cmd.Parameters.AddWithValue(atColumnName, productID);
+                            }
+                            else if (dtMapped.Rows[i][columnName].ToString() == "")
+                            {
+                                if (columnName == "DEPARTMENTREF" || columnName == "TAXCATEGORYREF" || columnName == "VENDORREF" || columnName == "GLYPHREF")
+                                {
+                                    cmd.Parameters.AddWithValue(atColumnName, 0);
+                                }
+                            }
+                            else if (dtMapped.Rows[i][columnName].ToString() == "NULL" || dtMapped.Rows[i][columnName].ToString() == "null" || dtMapped.Rows[i][columnName].ToString() == "Null")
+                            {
+                                cmd.Parameters.AddWithValue(atColumnName, DBNull.Value);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue(atColumnName, dtMapped.Rows[i][columnName]);
                             }
                         }
 
                         cmd.ExecuteNonQuery();
-                    
+
+                    }
                 }
             }
             catch
