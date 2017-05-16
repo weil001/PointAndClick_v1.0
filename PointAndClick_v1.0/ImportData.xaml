@@ -64,7 +64,7 @@
                   AutoGenerateColumns="True" 
                   CanUserSortColumns="False"
                   IsSynchronizedWithCurrentItem="True"
-                  IsReadOnly="True"
+                  IsReadOnly="False"
                   SelectionUnit="Cell"
                   CanUserResizeColumns="False" 
                   CanUserResizeRows="False" FontSize="14" BorderBrush="{x:Null}" Background="{x:Null}">

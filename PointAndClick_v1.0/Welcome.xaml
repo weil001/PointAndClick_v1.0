@@ -90,7 +90,7 @@
         </Button>
 
         <!--NEXT BUTTON -->
-        <Button x:Name="nextButton" HorizontalAlignment="Right" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" FontWeight="Bold" Margin="0,10,10,0" Grid.Column="1" Grid.Row ="2" Click="nextButton_Click" >
+        <Button x:Name="nextButton" HorizontalAlignment="Right" VerticalAlignment="Top" Width="115" Height="50" FontSize="14" FontWeight="Bold" Margin="0,10,10,0" Grid.Column="1" Grid.Row ="2" Click="nextButton_Click" IsEnabled="False" >
             <StackPanel Orientation="Horizontal">
                 <Image x:Name="Next" Source="next.png" Width="24" Height="24" />
                 <TextBlock Text="Next" Padding="2,2,0,0"/>

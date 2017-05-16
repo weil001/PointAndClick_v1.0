@@ -64,3 +64,27 @@ C:\Users\JR\Desktop\CIS 490\PointAndClick 5.13.17\PointAndClick_v1.0\PointAndCli
 C:\Users\JR\Desktop\CIS 490\PointAndClick 5.13.17\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.csproj.GenerateResource.Cache
 D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\ResourceDictionary.baml
 D:\Users\xiemo\Documents\GitHub\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\App.baml
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\PointAndClick_v1.0.exe.config
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\PointAndClick_v1.0.exe
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\PointAndClick_v1.0.pdb
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.csprojResolveAssemblyReference.cache
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\ResourceDictionary.baml
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\EditCSV.g.cs
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\ImportData.g.cs
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\MainWindow.g.cs
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\Welcome.g.cs
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\App.g.cs
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0_MarkupCompile.cache
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0_MarkupCompile.lref
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\App.baml
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\EditCSV.baml
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\ImportData.baml
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\MainWindow.baml
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\Welcome.baml
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.g.resources
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1._0.Properties.Resources.resources
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.csproj.GenerateResource.Cache
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.exe
+C:\_NetAdmin\PointAndClick_v1.0\PointAndClick_v1.0\obj\Debug\PointAndClick_v1.0.pdb
