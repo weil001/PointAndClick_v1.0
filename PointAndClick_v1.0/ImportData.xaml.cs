@@ -284,7 +284,7 @@ namespace PointAndClick_v1._0
                 {
                     dataGrid2.ItemsSource = ReadCSV(ofd.FileName).DefaultView;
 
-                    System.Windows.MessageBox.Show(csvFilepath, "Confirm", MessageBoxButton.OK, MessageBoxImage.Question);
+                    System.Windows.MessageBox.Show("The following CSV file has been imported:" + "\n" + csvFilepath, "Confirm", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }

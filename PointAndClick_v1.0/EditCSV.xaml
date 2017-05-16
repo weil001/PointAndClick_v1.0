@@ -51,9 +51,9 @@
                   CanUserResizeRows="False" SelectionChanged="csvDataGrid_SelectionChanged" FontSize="14" BorderBrush="{x:Null}" Background="{x:Null}">
         </DataGrid>
 
-        <TextBlock x:Name="DepartmentID" HorizontalAlignment="Left" Margin="140,10,0,0" TextWrapping="Wrap" Text="DepartmentRef: 0 - Default | 1 - Packing Materials | 2 - Rubber Stamp | 3 - Shipping | 4 - Insurance | 5 - Office Supplies" VerticalAlignment="Top"
+        <TextBlock x:Name="DepartmentID" HorizontalAlignment="Left" Margin="140,10,0,0" TextWrapping="Wrap" Text="DepartmentRef: 0 - Default | 1 - Packing Materials | 2 - Rubber Stamp" VerticalAlignment="Top"
                    Foreground="#FF0080C0" FontSize="10" Grid.ColumnSpan="2" Grid.Row="3" />
-        <TextBlock x:Name="DepartmentID2" HorizontalAlignment="Left" Margin="140,25,0,0" TextWrapping="Wrap" Text="6 - Money Orders | 7 - Forfeited Deposits | 8 - Pager | 9 - Gift Wrap | 10 - Novelty Items | 11 - Notary" VerticalAlignment="Top"
+        <TextBlock x:Name="DepartmentID2" HorizontalAlignment="Left" Margin="140,25,0,0" TextWrapping="Wrap" Text="3 - Shipping | 4 - Insurance | 5 - Office Supplies" VerticalAlignment="Top"
                    Foreground="#FF0080C0" FontSize="10" Grid.ColumnSpan="2" Grid.Row="3" />
         <TextBlock x:Name="TaxCategoryID" HorizontalAlignment="Left" Margin="140,40,0,0" TextWrapping="Wrap" Text="TaxCategoryRef: 1 - Non-Taxable | 2 - General Merchandise" VerticalAlignment="Top"
                    Foreground="#FF0080C0" FontSize="10" Grid.ColumnSpan="2" Grid.Row="3" />
